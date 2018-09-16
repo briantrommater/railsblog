@@ -1,0 +1,12 @@
+<%= form_for @comment do |f| %>
+  <%= f.label :WriteComment %>
+  <%= f.text_area :body, size: '40X40' %>
+  
+  <%= f.submit %>
+<% end %>
+
+
+<% if false %>
+<%= f.hidden_field(:user_id, value: @user.id) %>
+
+<% end %>

@@ -1,0 +1,7 @@
+<%= @user.name %>
+<%= @user.email %>
+
+<%= link_to("Edit User", edit_user_path(@user)) %>
+<%= link_to("Delete User", @user, method: 'delete') %>
+
+<%=image_tag "dog.jpeg" %>

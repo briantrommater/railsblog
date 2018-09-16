@@ -1,0 +1,23 @@
+<main id='posts-index'>
+  <% @posts.each do |post| %>
+      
+      <div class='postBox'>
+      <%= link_to(post.user.name, post) %> <br/>
+        Post: <%= post.body %><br/>
+      </div>
+  <% end %>
+
+
+
+  <p>
+    <%= link_to('Create Post', new_post_path)%>
+  </p>
+
+  <% if session[:user_id] %>
+     hi you are logged in!
+    <%= link_to 'Signout', destroy_session_path%>
+  <% else %>
+    <%= link_to 'Signin', new_session_path %>
+  <% end %>
+
+</main>

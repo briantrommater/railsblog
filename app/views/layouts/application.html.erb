@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Railsblog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+   
+  </head>
+
+  <body>
+
+    <div id="login-message">
+        <h4><% if session[:user_id] %></h4>
+          <h3 id="logged-in"> <%= User.find(session[:user_id]).name %>, you are signed in! </h3>
+          <% else %>
+          <h4 id="logged-out"> Please login </h4>
+        <% end %>
+      </div>
+
+    <div class='box'><a href = '/posts/'><div>Posts</div></a></div>
+    
+    <div class='box'><a href = '/users/'><div>Users</div></a></div>
+
+    <div class='boxC'><a href = '/comments/'><div>Comments</div></a></div>
+
+    <%= flash[:notice] if flash[:notice] %>
+    <%= yield %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </body>
+</html>

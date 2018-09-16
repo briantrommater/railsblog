@@ -1,0 +1,6 @@
+<%= form_for @post do |f| %>
+  <%= f.label :WritePost %>
+  <%= f.text_area :body, size: '40X40' %>
+  <%= f.hidden_field(:user_id, value: @user.id) %>
+  <%= f.submit %>
+<% end %>

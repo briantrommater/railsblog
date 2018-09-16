@@ -1,0 +1,82 @@
+body {
+    
+        background: linear-gradient(-45deg, #0202f5, #05eeee, #f55409, #ffff00);
+        background-size: 200% 200%;
+        -webkit-animation: Gradient 3s ease infinite;
+        animation: Gradient 3s ease infinite;
+}
+
+.box {
+	margin: 20px;
+    background-color: rgb(85, 190, 88);
+    width: 82px;
+    height: 60px;
+    border-radius: 12px;
+	font-size: 37px;
+	display: grid;
+	grid-template-columns: 
+	  minmax(1.2rem, 1fr) 
+	  minmax(auto, 57ch) 
+	  minmax(1.2rem, 1fr);
+	padding: 20px;
+}
+
+
+.boxC {
+	margin: 20px;
+    background-color: rgb(85, 190, 88);
+    width: 152px;
+    height: 60px;
+    border-radius: 12px;
+	font-size: 37px;
+	display: grid;
+	grid-template-columns: 
+	  minmax(1.2rem, 1fr) 
+	  minmax(auto, 57ch) 
+	  minmax(1.2rem, 1fr);
+	padding: 20px;
+}
+
+.postBox {
+	margin: 0 auto;
+	background-color: rgb(204, 255, 204);
+	// display: grid;
+	// grid-template-columns: 
+	// minmax(1.2rem, 1fr) 
+	// minmax(auto, 57ch) 
+	// minmax(1.2rem, 1fr);
+}
+
+.commentBox {
+	margin: 0 auto;
+	background-color: rgb(204, 255, 204);
+}
+    // border: 15px;
+    // border-color: red;
+    // float: left;
+    // margin: 20px;
+    // padding: 20px;
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
