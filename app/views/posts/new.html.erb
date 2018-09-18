@@ -1,6 +1,12 @@
+<div id="post-form">
 <%= form_for @post do |f| %>
-  <%= f.label :WritePost %>
-  <%= f.text_area :body, size: '40X40' %>
-  <%= f.hidden_field(:user_id, value: @user.id) %>
+  <%= f.label :WriteSomething %>
+  <%= f.text_area :body, size: '40x40' %>
+  
   <%= f.submit %>
+<% end %>
+</div>
+
+<% if false %>
+<%= f.hidden_field(:user_id, value: @user.id) %>
 <% end %>

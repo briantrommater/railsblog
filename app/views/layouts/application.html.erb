@@ -10,14 +10,15 @@
   </head>
 
   <body>
-
+   
     <div id="login-message">
         <h4><% if session[:user_id] %></h4>
           <h3 id="logged-in"> <%= User.find(session[:user_id]).name %>, you are signed in! </h3>
           <% else %>
-          <h4 id="logged-out"> Please login </h4>
+           <h4 id="logged-out"> Please login </h4>
         <% end %>
       </div>
+     
 
     <div class='box'><a href = '/posts/'><div>Posts</div></a></div>
     

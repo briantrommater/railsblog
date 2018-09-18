@@ -1,9 +1,9 @@
 <main id='posts-index'>
-  <% @posts.each do |post| %>
+  <% @posts.reverse.each do |post| %>
       
       <div class='postBox'>
-      <%= link_to(post.user.name, post) %> <br/>
-        Post: <%= post.body %><br/>
+      <%= link_to(post.body, post) %> <br/>
+        Post created by: <%= post.user.name %><br/>
       </div>
   <% end %>
 

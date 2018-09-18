@@ -1,5 +1,5 @@
 <%= form_for @post do |f| %>
-  <%= f.label :Writesomething %>
+  <%= f.label :WriteYourEdit %>
   <%= f.text_area :body %>
   <%= f.hidden_field(:user_id, value: @user.id) %>
   <%= f.submit %>
