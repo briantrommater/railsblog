@@ -7,38 +7,30 @@ class CommentsController < ApplicationController
     #GET /comments/new
     def new
         @comment = Comment.new
-    end
-
-    #GET /comments/:id
-    def show 
-        @comment = Comment.find(params[:id])
-    end
-
-    #GET /comments/:id/edit
-    def edit
-        @comment = Comment.find(params[:id])
-    end
-
-    #PUT /comments/:id
-    def update
-        comment = Comment.find(comment_params)
-        comment.update(params[:comment])
-        flash[:notice] = "Updated comment."
-        redirect_to comment
+        @comment = Comment.new(post_id: params[:post_id])
+        @post = Post.find(params[:post_id])
     end
 
     #POST /comments
     def create
-        comment = Comment.create(comment_params)
-        flash[:notice] = "Created comment."
-        redirect_to comment
+        @comment = Comment.new(comment_params)
+        @comment.user_id = session[:user_id]
+        @post = params[:id]
+        if @comment.save
+          flash[:notice] = "comment created."
+          redirect_to "/posts/#{params[:post_id]}"
+        else
+          flash[:error] = "Error creating comment."
+          render '/'
+        end
     end
 
-    #DELETE /comments/:id
+
     def destroy
-        comment.find(params[:id]).destroy
-        flash[:notice] = "Destroyed comment."
-        redirect_to comments_path
+        # @post = Post.find(params[:post_id])
+        @comment = @post.comments.find(params[:id])
+        @comment.destroy
+        redirect_to '/posts'
     end
 
     private
