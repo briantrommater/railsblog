@@ -24,11 +24,24 @@ class CommentsController < ApplicationController
           render '/'
         end
     end
+    
+    #GET /posts/:id/edit
+    def edit
+        @comment = Comment.find(params[:id])
+        @post = Post.find(params[:post_id])
+    end
 
+    #PUT /posts/:id
+    def update
+        comment = Comment.find(params[:id])
+        comment.update(comment_params)
+        flash[:notice] = "Updated post."
+        redirect_to "/posts/#{params[:post_id]}"
+    end
 
     def destroy
-        # @post = Post.find(params[:post_id])
-        @comment = @post.comments.find(params[:id])
+        @post = Post.find(params[:post_id])
+        @comment = Comment.find(params[:id])
         @comment.destroy
         redirect_to '/posts'
     end

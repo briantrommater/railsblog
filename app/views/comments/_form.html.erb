@@ -1,5 +1,5 @@
 <div id="comment_form_div">
-    <%= form_for @comment do |f| %>
+    <%= form_for ([@post, @comment]) do |f| %>
             <%= f.label :body %>
             <%= f.text_area :body, class: "text-area" %>
             <%= f.hidden_field :post_id %>
