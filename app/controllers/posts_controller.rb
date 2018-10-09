@@ -8,7 +8,7 @@ class PostsController < ApplicationController
     #GET /posts/new
     def new
         @post = Post.new
-        @user = User.find(session[:user_id])
+        
     end
 
     #GET /posts/:id
@@ -32,7 +32,7 @@ class PostsController < ApplicationController
 
     #POST /posts
     def create
-        post = Post.create(post_params)
+        post = Post.new(post_params)
         post.user_id = session[:user_id]
         if post.save
             flash[:success] = 'created post'
