@@ -1,9 +1,8 @@
 body {
-	background: #05eeee;
-	// background: linear-gradient(-45deg, #0202f5, #05eeee, #f55409, #ffff00);
-	// background-size: 200% 200%;
-	// -webkit-animation: Gradient 3s ease infinite;
-	// animation: Gradient 3s ease infinite;
+	background: linear-gradient(-45deg, #0202f5, #05eeee, #f55409, #ffff00);
+	background-size: 200% 200%;
+	-webkit-animation: Gradient 3s ease infinite;
+	animation: Gradient 3s ease infinite;
 }
 
 .box {
